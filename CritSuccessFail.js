@@ -4,23 +4,66 @@
     //Variables for generating critical success or fail
     //
     var crits = {
-        weapon: {
-          bludgeoning: [“You call that a crit? Roll damage as normal.”, “Smashed off balance! Roll damage as normal and the next attack against the creature has advantage.”, “Good hit! Do not roll your damage dice, instead deal the maximum result possible with those dice.”, “Sent reeling! Do not roll your damage dice, instead deal the maximum result possible with those dice and push the creature up to 15 feet in any direction.”, “Great hit! Roll your damage dice twice and add them together.”, “Take a seat! Roll damage dice twice and add them together and the creature is knocked prone.”, “Rocked and rolled! Roll damage dice twice and add them together, push the creature up to 15 feet away, and the creature is knocked prone.”, “Grievous injury! Deal the maximum amount of damage from your normal damage dice then roll your damage dice and add the result. Then roll on the Injury chart.”, “Crushed! Deal the twice maximum result of your damage dice and roll on the major injury chart.”, “Splat! Deal the maximum result of your damage dice twice, the creature is stunned until the end of your next turn, and roll on the major injury chart.”],
-          slashing: [“You call that a crit? Roll damage as normal.”, “Sliced and diced! Roll damage as normal and the creature loses [[1d6]] hit points at the start of its next turn.”, “Good hit! Do not roll your damage dice, instead deal the maximum result possible with those dice.”, “Open gash! Roll your damage dice as normal and the creature is bleeding. For the next minute the creature loses 2 HP at the start of each of its turns until it uses an action to staunch this wound.”, “Great hit! Roll your damage dice twice and add them together.”, “Deep slice! Roll your damage dice twice and add them together and the creature is bleeding. For the next minute the creature loses [[1d4]] hit points at the start of each of its turns until it uses an action to staunch this wound.”, “Lacerated! Roll your damage dice twice and add them together and the creature is bleeding. For the next minute the creature loses [[1d6]] hit points at the start of each of its turns until it uses an action to staunch this wound.”, “Severed! Deal the maximum amount of damage from your normal damage dice then roll your damage dice and add the result. Then roll on the Injury chart.”, “Dissected! Deal twice the maximum result of your damage dice and roll on the injury chart.”, “Slash! Deal the maximum result of your damage dice twice, roll on the injury chart, and the creature is bleeding. For the next minute the creature loses [[1d8]] hit points at the start of each of its turns until it uses an action to staunch this wound.”],
-          piercing: [“You call that a crit? Roll damage as normal.”, “Lunge and thrust! Roll damage dice twice and use the higher result.”, “Good hit! Do not roll your damage dice, instead deal the maximum result possible with those dice.”, “Stabbed! Roll your damage dice twice and add them together.”, Great hit! Roll your damage dice twice and add them together.”, “Swiss cheese! Roll twice as many damage dice as normal. Then roll on the injury chart.”, “Punctured! Roll your damage dice twice and add them together and roll on the minor injury chart.”, “Cruel prick! Roll your damage dice twice and add them together and roll on the injury chart.”, “Run through! Deal twice the maximum result of your damage dice and roll on the injury chart.”, “Pierce! Deal the maximum result of your damage dice twice, roll on the injury chart.”]
+        v1: {
+          bludgeoning: ["You call that a crit? Roll damage as normal"],
+          slashing: ["You call that a crit? Roll damage as normal"],
+          piercing: ["You call that a crit? Roll damage as normal"],
+          spell: ["Well, that was spectacularly unspectacular. Roll damage as normal."],
         },
-        spell: {
-          acid: [“You call that a crit? Roll damage as normal.”, “Scalding bile! Roll damage as normal and the creature is scarred. While scarred the creature has disadvantage on all Charisma ability checks except Charisma (Intimidation).Being scarred can be healed in the same way as a minor injury.”, “Good hit! Do not roll your damage dice, instead deal the maximum result possible with those dice.”, “Melted flesh! Roll your damage as normal and the creature is disfigured. While disfigured the creature has disadvantage on all Charisma ability checks except Charisma (Intimidation). Being disfigured can be removed with the spell greater restoration.”, “Great hit! Roll your damage dice twice and add them together.”, “Boiling flesh! Roll twice as many damage dice as normal and if the creature is wearing armor its AC modifier is reduced by 1 until it can be repaired (for 1/4th the price of new armor of the same type) or cleaned (if the armor is magical). If the creature is not wearing armor, roll on the injury chart.”, “Horrific mutilation! Roll twice as many damage dice as normal and roll on the injury chart. Additionally, the creature is disfigured. While disfigured the creature has disadvantage on all Charisma ability checks except Charisma (Intimidation). Being disfigured can be removed with the spell greater restoration.”, “Caustic trauma! Deal the maximum amount of damage from your normal damage dice then roll your damage dice and add that result. If the creature is wearing armor, roll on the minor injury chart and its AC modifier is reduced by 2 until it can be repaired (for half the price of new armor of the same type) or cleaned (if the armor is magical). If the creature is not wearing armor, roll on the injury chart.”, “Vitriolic! Deal twice the maximum result of your damage dice and roll on the injury chart.”, “Acid bath! Deal twice the maximum result of your damage dice. If the creature is wearing armor, the armor is destroyed (if non-magical) or rendered useless until cleaned during a long rest (if magical) and roll on the major injury chart. If the creature is not wearing armor, roll on the major injury chart and the creature is disfigured. While disfigured the creature has disadvantage on all Charisma ability checks except Charisma (Intimidation). Being disfigured can be removed with the spell greater restoration.”],
-          cold: ["You call that a crit? Roll damage as normal.”, “Chills! Roll damage as normal and the creature may only move half its movement speed on its next turn.”, “Good hit! Do not roll your damage dice, instead deal the maximum result possible with those dice.”, “Frosty! Roll your damage as normal and the creature’s movement speed is 0 until the end of its next turn.”, “Great hit! Roll twice as many damage dice as normal.”, “Freezing! Roll twice as many damage dice as normal and the creature is paralyzed until the end of its next turn.”, “Frozen! Roll twice as many damage dice as normal and the creature is paralyzed until the end of its next turn. If the creature takes damage before the end of its next turn, roll on the injury chart.”, “Ice block! Deal the maximum amount of damage from your normal damage dice then roll your damage dice and add that result. The creature is paralyzed until the end of its next turn and rolls on the injury chart.”, “Glacial! Deal twice the maximum result of your damage dice and roll on the major injury chart.”, “Subzero! Deal twice the maximum result of your damage dice, roll on the major injury chart, and the creature is paralyzed for the next minute. The creature may attempt a saving throw at the end of each of its turns (DC 16) to end this effect. If it fails this saving throw three times it is frozen solid and becomes a petrified but frozen solid in a block of ice rather than turned to stone.”],
-          fire: ["fi1", "fi2", "fi3"],
-          force: ["fo1", "fo2", "fo3"],
-          lightning: ["l1", "l2", "l3"],
-          necrotic: ["n1", "n2", "n3"],
-          poison: ["po1", "po2", "po3"],
-          psychic: ["ps1", "ps2", "ps3"],
-          radiant: ["r1", "r2", "r3"],
-          thunder: ["t1", "t2", "t3"]
+        v2t3: {
+          bludgeoning: ["Smashed off balance! Roll damage as normal and the next attack against the creature has advantage."],
+          slashing: ["Slllaaasssshhh! You got him good, roll damage dice twice."],
+          piercing: ["Lunge and thrust! Roll damage dice twice and use the higher result."],
+          spell: ["Zzzap! Your magical energies zap it good, roll damage dice twice."],
         },
+        v4t6: {
+          bludgeoning: ["Good hit! Do not roll your damage dice, instead deal the maximum result possible with those dice."],
+          slashing: ["Slllaaasssshhh! You got him good, roll damage dice twice."],
+          piercing: ["Good hit! Do not roll your damage dice, instead deal the maximum result possible with those dice."],
+          spell: ["Zzzap! Your magical energies zap it good, roll damage dice twice."],  
+        },
+        v7t8: {
+          bludgeoning: ["Sent reeling! Do not roll your damage dice, instead deal the maximum result possible with those dice and push the creature up to 15 feet in any direction."],
+          slashing: ["You call that a crit? Roll damage as normal"],
+          piercing: ["Stabbed! Roll your damage dice twice and add them together."],
+          spell: ["Well, that was spectacularly unspectacular. Roll damage as normal."],  
+        },
+        v9t11: {
+          bludgeoning: ["Great hit! Roll your damage dice twice and add them together."],
+          slashing: ["You call that a crit? Roll damage as normal"],
+          piercing: ["Great hit! Roll your damage dice twice and add them together."],
+          spell: ["Well, that was spectacularly unspectacular. Roll damage as normal."],  
+        },
+        v12t13: {
+          bludgeoning: ["Take a seat! Roll damage dice twice and add them together and the creature is knocked prone."],
+          slashing: ["You call that a crit? Roll damage as normal"],
+          piercing: ["Swiss cheese! Roll twice as many damage dice as normal. Then roll twice on the minor injury chart and use the lower result."],
+          spell: ["Well, that was spectacularly unspectacular. Roll damage as normal."],  
+        },
+        v14t16: {
+          bludgeoning: ["Rocked and rolled! Roll damage dice twice and add them together, push the creature up to 15 feet away, and the creature is knocked prone."],
+          slashing: ["You call that a crit? Roll damage as normal"],
+          piercing: ["Punctured! Roll your damage dice twice and add them together and roll on the minor injury chart."],
+          spell: ["Well, that was spectacularly unspectacular. Roll damage as normal."], 
+        },
+        v17t18: {
+          bludgeoning: ["Grievous injury! Deal the maximum amount of damage from your normal damage dice then roll your damage dice and add the result. Then roll on the Minor Injury chart. "],
+          slashing: ["You call that a crit? Roll damage as normal"],
+          piercing: ["Cruel prick! Roll your damage dice twice and add them together and roll on the major injury chart."],
+          spell: ["Well, that was spectacularly unspectacular. Roll damage as normal."],  
+        },
+        v19: {
+          bludgeoning: ["Crushed! Deal the twice maximum result of your damage dice and roll on the major injury chart"],
+          slashing: ["You call that a crit? Roll damage as normal"],
+          piercing: ["Run through! Deal twice the maximum result of your damage dice and roll on the major injury chart"],
+          spell: ["Well, that was spectacularly unspectacular. Roll damage as normal."],  
+        },
+        v20: {
+          bludgeoning: ["Splat! Deal the maximum result of your damage dice twice, the creature is stunned until the end of your next turn, and roll on the major injury chart."],
+          slashing: ["You call that a crit? Roll damage as normal"],
+          piercing: ["Pierce! Deal the maximum result of your damage dice twice, roll on the minor injury chart, and roll on the major injury chart"],
+          spell: ["Well, that was spectacularly unspectacular. Roll damage as normal."],
+        },       
     };
     
     var fumbles = {
